@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lib/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/fontawesome-free-5.15.4-web/css/all.min.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+
+  <title>CarBreezy</title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+  <header class="sticky-top" ng-include="'pages/_header.html'"></header>
+  <div ng-view autoscroll="true"></div>
+  <footer class="bg-dark text-light" ng-include="'pages/_footer.html'"></footer>
+
+<script src="lib/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="lib/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-route.js"></script>
+<script src="src/js/gallery.js"></script>
+<script src="src/js/routing.js"></script>
+<script src="src/js/controller.js"></script>
+</body>
+</html>

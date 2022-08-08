@@ -1,0 +1,48 @@
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+header a,
+header a:hover {
+  text-decoration: none;
+}
+
+.user-count {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(left, #000, #f0f0f0);
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.gradient:after {
+  background: none;
+  content: 'CarBreezy';
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  text-shadow: 1px 1px 2px #0d6efd;
+}
+
+/* Nav bar */
+@media (min-width: 992px) {
+  header .nav-item:last-child {
+      border-left: 1px solid #eee;
+      margin-left: 15px;
+      padding-left: 15px;
+    }
+}

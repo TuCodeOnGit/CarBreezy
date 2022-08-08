@@ -1,0 +1,69 @@
+<div class="modal fade" id="carDetailsModal" tabindex="-1" aria-labelledby="carDetailsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carDetailsLabel">{{ selectedCar.brand }} {{ selectedCar.model }}<span class="badge bg-secondary ms-2" ng-hide="selectedCar.new">Used</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="src/images/model/{{ selectedCar.image }}" class="w-75 mb-4" alt="">
+        <p class="modal-text mb-2"><strong ng-bind="selectedCar.price | currency: '$' : 0"></strong></p>
+
+        <div class="d-flex align-items-start">
+          <div class="nav nav-tabs flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-internal-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-internal" type="button" role="tab" aria-controls="v-pills-internal"
+              aria-selected="true">Internal</button>
+            <button class="nav-link" id="v-pills-external-tab" data-bs-toggle="pill" data-bs-target="#v-pills-external"
+              type="button" role="tab" aria-controls="v-pills-external" aria-selected="false">External</button>
+            <button class="nav-link" id="v-pills-engine-tab" data-bs-toggle="pill" data-bs-target="#v-pills-engine"
+              type="button" role="tab" aria-controls="v-pills-engine" aria-selected="false">Engine</button>
+            <button class="nav-link" id="v-pills-dimensions-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-dimensions" type="button" role="tab" aria-controls="v-pills-dimensions"
+              aria-selected="false">Dimensions</button>
+          </div>
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-internal" role="tabpanel" aria-labelledby="v-pills-internal-tab">
+              <ul>
+                <li>Seats: {{ selectedCar.internalSpecification.numberOfSeats }}</li>
+                <li>Fuel: {{ selectedCar.internalSpecification.fuelType }}</li>
+                <li>Drive System: {{ selectedCar.internalSpecification.driveSystem }}</li>
+                <li>Gear: {{ selectedCar.internalSpecification.gear }}</li>
+                <li>Fuel Capacity: {{ selectedCar.internalSpecification.fuelCapacity }}</li>
+                <li>CC: {{ selectedCar.internalSpecification.cylinderDisplacement }}</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="v-pills-external" role="tabpanel" aria-labelledby="v-pills-external-tab">
+              <ul>
+                <li>Exterior Color: {{selectedCar.external.exteriorColor }}</li>
+                <li>Front Light: {{selectedCar.external.frontLight }}</li>
+                <li>Rear Mirror: {{selectedCar.external.outsideRearviewMirror }}</li>
+                <li>Fog Lights: {{selectedCar.external.fogLights }}</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="v-pills-engine" role="tabpanel" aria-labelledby="v-pills-engine-tab">
+              <ul>
+                <li>
+                  Engine: {{ selectedCar.engine }}
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="v-pills-dimensions" role="tabpanel" aria-labelledby="v-pills-dimensions-tab">
+              <ul>
+                <li>Long: {{ selectedCar.dimensions.longs }}</li>
+                <li>Width: {{ selectedCar.dimensions.width }}</li>
+                <li>Height: {{ selectedCar.dimensions.height }}</li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+          aria-label="Close">Close</button>
+        <button type="button" class="btn btn-primary">Buy now</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+footer ul {
+  list-style: none;
+}
+
+footer a {
+  color: #999;
+}
+
+footer a:hover {
+  color: #888;
+}
+
+
+.page-foot__ticker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial";
+  font-size: 11px;
+  font-weight: Bold;
+  height: 36px;
+  line-height: 1;
+  padding: 0 12px;
+  text-transform: uppercase;
+}
+
+.page-foot__ticker .msg {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.page-foot__ticker .msg span {
+  animation: marquee 8s linear infinite;
+  display: inline-block;
+  padding-left: calc(100% + 24px);
+}
+
+.page-foot__ticker .msg--two span {
+  animation-delay: 4s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

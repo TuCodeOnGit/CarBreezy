@@ -1,0 +1,39 @@
+<section class="section-user">
+  <div class="container py-5">
+    <div class="row">
+      <div class="d-none d-md-block col-md-6">
+        <img src="src/images/user/signupin.png" width="300px" alt="">
+        <h6>Already have an acount</h6>
+        <a href="#!sign-in" class="btn btn-outline-primary rounded-pill" type="button">Sign in</a>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="d-flex flex-column align-items-center">
+          <div class="wrapper">
+            <input ng-model="textmail" type="text" class="form-control inputText" required />
+            <span class="floating-label">Your email address</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="textpass" type="password" class="form-control inputText" required />
+            <span class="floating-label">Password</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="textconfirmpass" type="password" class="form-control inputText" required />
+            <span class="floating-label">Confirm password</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="textname" type="text" class="form-control inputText" required />
+            <span class="floating-label">First and last name</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="textaddress" type="text" class="form-control inputText" required />
+            <span class="floating-label">Address</span>
+          </div><br>
+          <div class="wrapper">
+            <a ng-click="signUp()" class="btn btn-outline-primary rounded-pill w-auto">Submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{currentMember}}
+</section>

@@ -1,0 +1,45 @@
+<div class="bg-light-blue py-3">
+  <div class="container d-flex flex-column flex-sm-row justify-content-between">
+    <h1 class="h6 align-self-center m-0">Find More</h1>
+    <input class="form-control w-50 w-sm-25 me-0" type="search" placeholder="Search">
+  </div>
+</div>
+
+<section class="section-contact container py-5 px-sm-5 min-vh-100">
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-5" id="tab">
+      <a href="#!more/contact" class="nav-link" id="contact-tab" data-bs-target="#contact">Contact Us</a>
+      <a href="#!more/about" class="nav-link" id="about-tab" data-bs-target="#about">About Us</a>
+      <a href="#!more/queries" class="nav-link" id="queries-tab" data-bs-target="#queries">Queries(FAQ)</a>
+      <a href="#!more/gallery" class="nav-link" id="gallery-tab" data-bs-target="#gallery">Gallery</a>
+      <a href="#!more/sitemap" class="nav-link" id="sitemap-tab" data-bs-target="#sitemap">Site Map</a>
+    </div>
+
+    <div class="tab-content" id="tabContent">
+      <div class="tab-pane fade show" id="contact">
+        <div ng-include="'pages/more/_contact.html'"></div>
+      </div>
+      <div class="tab-pane fade" id="about">
+        <div ng-include="'pages/more/_about.html'"></div>
+      </div>
+      <div class="tab-pane fade" id="gallery">
+        <div ng-include="'pages/more/_gallery.html'"></div>
+      </div>
+      <div class="tab-pane fade" id="queries">
+        <div ng-include="'pages/more/_queries.html'"></div>
+      </div>
+      <div class="tab-pane fade" id="sitemap">
+        <div ng-include="'pages/more/_sitemap.html'"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function () {
+    var hash = window.location.hash.substr(8);
+    var someTabTriggerEl = document.querySelector("#" + hash + "-tab");
+    var tab = new bootstrap.Tab(someTabTriggerEl);
+    tab.show();
+  });
+</script>

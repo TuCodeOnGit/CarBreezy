@@ -1,0 +1,27 @@
+<section class="section-user">
+  <div class="container py-5">
+    <div class="row">
+      <div class="d-none d-md-block col-md-6">
+        <img src="src/images/user/signupin.png" width="300px" alt="">
+        <h6>Already have an acount</h6>
+        <a href="#!sign-up" class="btn btn-outline-primary rounded-pill" type="button">Sign up</a>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="d-flex flex-column align-items-center">
+          <div class="wrapper">
+            <input ng-model="email" type="text" class="form-control inputText" required />
+            <span class="floating-label">Your email address</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="password" type="text" class="form-control inputText" required />
+            <span class="floating-label">Password</span>
+          </div><br>
+
+          <div class="wrapper">
+            <a ng-click="signIn()" class="btn btn-outline-primary rounded-pill w-auto">Submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

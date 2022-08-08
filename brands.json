@@ -1,0 +1,12 @@
+[
+  {"name":"Kia","img":"Kia.png"},
+  {"name":"Honda","img":"Honda.png"},
+  {"name":"Toyota","img":"Toyota.png"},
+  {"name":"Porsche","img":"Porsche.png"},
+  {"name":"BMW","img":"BMW.png"},
+  {"name":"Mazda","img":"Mazda.png"},
+  {"name":"Suzuki","img":"Suzuki.png"},
+  {"name":"Hyundai","img":"Hyundai.png"},
+  {"name":"Rolls-Royce","img":"Rolls-Royce.png"},
+  {"name":"Mercedes-Benz","img":"Mercedes-Benz.png"}
+]

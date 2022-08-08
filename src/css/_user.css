@@ -1,0 +1,33 @@
+.section-user {
+  background-image: url('../images/user/bg-desktop.svg');
+  background-size: cover;
+  background-position: 50% bottom;
+}
+
+input:focus~.floating-label,
+input:not(:focus):valid~.floating-label {
+  top: 2px;
+  bottom: 10px;
+  left: 5px;
+  font-size: .73rem;
+  opacity: 1;
+}
+
+.inputText {
+  font-size: 1rem;
+  width: 200px;
+  height: 3rem;
+}
+
+.wrapper {
+  padding-left: 2px;
+  position: relative;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 10px;
+  transition: 0.2s ease all;
+}

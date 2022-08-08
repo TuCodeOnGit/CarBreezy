@@ -1,0 +1,341 @@
+<section class="section-products-filter bg-light-blue">
+  <div class="container py-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
+      <h1 class="h6 align-self-center mb-2 mb-md-0">New Cars for Sale</h1>
+
+      <div class="d-flex gap-3">
+        <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample">
+          Filter
+        </button>
+        <input ng-model="textSearch" class="form-control me-0" type="search" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section class="section-products-cars min-vh-100">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="offcanvas offcanvas-start border rounded-3 p-lg-0" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filter</h5>
+            <button type="button" class="btn-close text-reset d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+  
+          <div class="offcanvas-body scrollable">
+            <div class="box">
+              <div class="d-flex justify-content-center">
+                <div class="btn-group mx-auto mb-3">
+                  <a href="#!new-cars" ng-class="getClass('/new-cars')" class="btn btn-outline-primary">New Cars</a>
+                  <a href="#!used-cars" ng-class="getClass('/used-cars')" class="btn btn-outline-primary">Used Cars</a>
+                </div>
+              </div>
+  
+              <div class="d-flex justify-content-between">
+                <label>Brands</label>
+                <select ng-model="brandFilter" class="form-select form-select-sm w-auto d-inline-block mb-3" aria-label=".form-select-lg example">
+                  <option selected value="">All</option>
+                  <option ng-repeat="brand in brands" value="{{ brand.name }}">{{ brand.name }}</option>
+                </select>
+              </div>
+  
+              <div class="d-flex justify-content-between">
+                <label>Model</label>
+                <select class="form-select form-select-sm w-auto d-inline-block mb-3" aria-label=".form-select-lg example"
+                  disabled>
+                  <option selected>All</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+  
+              <div class="d-flex justify-content-between">
+                <label>Body Style</label>
+                <select ng-model="bodyStyleFilter" class="form-select form-select-sm w-auto d-inline-block mb-3" aria-label=".form-select-lg example">
+                  <option selected value="">All</option>
+                  <option value="SUV">SUVs</option>
+                  <option value="Sedan">Sedans</option>
+                  <option value="Hatchback">Hatchbacks</option>
+                  <option value="Convertible">Convertibles</option>
+                </select>
+              </div>
+            </div>
+            <hr>
+            <div class="box pb-3">
+              <label>Price</label>
+              <div class="price-input">
+                <div class="field">
+                  <input type="number" class="input-min" value="25000">
+                </div>
+                <div class="separator">to</div>
+                <div class="field">
+                  <input type="number" class="input-max" value="750000">
+                </div>
+              </div>
+              <div class="slider">
+                <div class="progress"></div>
+              </div>
+              <div class="range-input">
+                <input type="range" class="range-min" min="0" max="1000000" value="25000" step="100">
+                <input type="range" class="range-max" min="0" max="1000000" value="750000" step="100">
+              </div>
+            </div>
+  
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    Exterior Color
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon bg-dark"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Black</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #2A4679;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Blue</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #D1D1D4;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Silver</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #513D3C;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Brown</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Drive type
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">4WD</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">AWD</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">FWD</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">RWD</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Engine
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingThree">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Cylinder</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Electric</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Hybrid</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Hydrogen</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFour">
+                    Interior Color
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingFour">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon bg-dark"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Black</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #2A4679;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Blue</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #D1D1D4;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Silver</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <span class="canyon" style="background-color: #513D3C;"></span>
+                      <label class="form-check-label" for="flexCheckDefault">Brown</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseFive">
+                    Fuel Type
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingFive">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Diesel</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Electric</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Gas</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Hybrid</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Hydrogen</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">Plug-In Hybrid</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="offcanvas-footer p-4">
+            <button class="btn btn-primary d-block w-75 mx-auto rounded-pill d-lg-none" data-bs-dismiss="offcanvas">Apply</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row d-flex">
+          <div class="col-6 col-md-4 mb-4" ng-repeat="car in cars | filter: {new: true, brand: brandFilter, bodyStyle: bodyStyleFilter} | filter: textSearch">
+            <div class="card h-100 pt-4" data-bs-toggle="modal" data-bs-target="#carDetailsModal" ng-click="openCarDetails(car)">
+              <img src="src/images/model/{{car.image}}" class="card-img-top" alt="">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h3 class="card-title h6 mb-2">{{car.brand}} {{car.model}}</h3>
+                <div class="d-flex border-bottom pb-2 mb-2">
+                  <div class="w-50 border-end">
+                    <small>Estimated Price</small>
+                    <p><strong ng-bind="car.price | currency: '$' : 0"></strong></p>
+                  </div>
+                  <div class="w-50 text-end">
+                    <small>Savings</small>
+                    <p><strong>$0</strong></p>
+
+                  </div>
+                </div>
+                <p class="card-text "><i class="fas me-2 fa-tag"></i><small>MSRP: {{ car.price | currency: '$' : 0 }}</small></p>
+                <p class="card-text "><i class="fas me-2 fa-location-arrow"></i><small>Vietnam</small></p>
+                <p class="card-text "><i class="fas me-2 fa-fill-drip"></i><small style="text-transform: capitalize;" ng-bind="car.external.exteriorColor">White</small></p>
+                <p class="card-text"><i class="fas me-2 fa-car"></i><small>{{ car.bodyStyle }}</small></p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<div ng-include="'pages/cars/_car-details.html'"></div>
+
+<script>
+  $(window).ready(function () {
+    // Filter input
+    const rangeInput = document.querySelectorAll(".range-input input"),
+      priceInput = document.querySelectorAll(".price-input input"),
+      range = document.querySelector(".slider .progress");
+    let priceGap = 1000;
+    priceInput.forEach(input => {
+      input.addEventListener("input", e => {
+        let minPrice = parseInt(priceInput[0].value),
+          maxPrice = parseInt(priceInput[1].value);
+
+        if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
+          if (e.target.className === "input-min") {
+            rangeInput[0].value = minPrice;
+            range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+          } else {
+            rangeInput[1].value = maxPrice;
+            range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+          }
+        }
+      });
+    });
+    rangeInput.forEach(input => {
+      input.addEventListener("input", e => {
+        let minVal = parseInt(rangeInput[0].value),
+          maxVal = parseInt(rangeInput[1].value);
+        if ((maxVal - minVal) < priceGap) {
+          if (e.target.className === "range-min") {
+            rangeInput[0].value = maxVal - priceGap
+          } else {
+            rangeInput[1].value = minVal + priceGap;
+          }
+        } else {
+          priceInput[0].value = minVal;
+          priceInput[1].value = maxVal;
+          range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+          range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+      });
+    });
+  });
+</script>

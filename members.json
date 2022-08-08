@@ -1,0 +1,16 @@
+[
+  {
+    "username": "Tin",
+    "role": "admin",
+    "email": "tin",
+    "password":"123",
+    "address":"CMT8"
+  },
+  {
+    "username": "Tu",
+    "role": "admin",
+    "email": "tu",
+    "password":"123",
+    "address":"CMT8"
+  }
+]

@@ -1,0 +1,6 @@
+.hero {
+  height: 444px;
+  background-image: url('../images/home/hero.png');
+  background-size: cover;
+  background-position: 67% bottom;
+}

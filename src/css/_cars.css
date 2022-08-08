@@ -1,0 +1,179 @@
+/* Cars card styles */
+.section-products-cars .card {
+  box-shadow: 2px 2px 7px 0 rgb(1 1 1 / 15%);
+}
+.section-products-cars .card:hover {
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Modal styles */
+.modal .nav-tabs .nav-link {
+  border-right-color: #dee2e6;
+}
+.modal .nav-tabs .nav-link.active {
+  border-bottom-color: #dee2e6;
+  border-right-color: #fff;
+}
+.modal .nav-tabs {
+  border-bottom: none;
+}
+
+.carousel-indicators {
+  background-color: rgba(0, 0, 0, .3);
+  margin: 0;
+}
+
+/* Filter styles */
+.canyon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+@media (min-width: 992px) {
+  .offcanvas,.offcanvas-start {
+    box-shadow: 2px 2px 7px 0 rgb(1 1 1 / 15%);
+    transform: none!important;
+    visibility: visible!important;
+    position: unset!important;
+  }
+}
+
+.price-input {
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+
+.price-input .field {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+}
+
+.field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #999;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.price-input .separator {
+  width: 130px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  height: 5px;
+  position: relative;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.slider .progress {
+  height: 100%;
+  left: 5%;
+  right: 25%;
+  position: absolute;
+  border-radius: 5px;
+  background: #17A2B8;
+}
+
+.range-input {
+  position: relative;
+}
+
+.range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #17A2B8;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background: #17A2B8;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+.scrollable {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Offers */
+.offers-banner {
+  height: 100px;
+  background: linear-gradient(90deg, #03806D 0%, #0E68AC 100%) !important;
+}
+
+.offers-car-image {
+  position: relative;
+  display: block;
+  width: 80%;
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20%;
+  top: -80px;
+}
+
+.offers-car-image img {
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+.offers-car-image {
+    width: 50%;
+    margin-right: 0;
+    padding-bottom: 8%;
+  }
+}
+
+/* */
