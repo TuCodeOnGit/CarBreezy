@@ -36,7 +36,7 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
   }
 
   $scope.openCarDetails = function (car) {
-    $scope.selectedCar = car;
+    $rootScope.selectedCar = car;
   }
 
   $interval(function () {
@@ -53,7 +53,6 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
         setStorage("currentMember", $rootScope.currentMember);
         
         $rootScope.isSignIn = true;
-        $location.path('/user');
       }
     }
   }
@@ -78,7 +77,6 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
     alert(msg);
     $rootScope.isSignIn = true;
     $rootScope.currentMember = member;
-    $location.path('/user');
   }
 
   function setStorage(key, value) {

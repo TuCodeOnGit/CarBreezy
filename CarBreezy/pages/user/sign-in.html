@@ -7,7 +7,7 @@
         <a href="#!sign-up" class="btn btn-outline-primary rounded-pill" type="button">Sign up</a>
       </div>
       <div class="col-12 col-md-6">
-        <div class="d-flex flex-column align-items-center">
+        <form class="d-flex flex-column align-items-center">
           <div class="wrapper">
             <input ng-model="email" type="text" class="form-control inputText" required />
             <span class="floating-label">Your email address</span>
@@ -16,11 +16,10 @@
             <input ng-model="password" type="text" class="form-control inputText" required />
             <span class="floating-label">Password</span>
           </div><br>
-
           <div class="wrapper">
-            <a ng-click="signIn()" class="btn btn-outline-primary rounded-pill w-auto">Submit</a>
+            <button type="submit" ng-click="signIn()" class="btn btn-outline-primary rounded-pill w-auto">Submit</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

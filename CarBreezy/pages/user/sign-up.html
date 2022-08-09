@@ -7,7 +7,7 @@
         <a href="#!sign-in" class="btn btn-outline-primary rounded-pill" type="button">Sign in</a>
       </div>
       <div class="col-12 col-md-6">
-        <div class="d-flex flex-column align-items-center">
+        <form class="d-flex flex-column align-items-center">
           <div class="wrapper">
             <input ng-model="textmail" type="text" class="form-control inputText" required />
             <span class="floating-label">Your email address</span>
@@ -29,11 +29,10 @@
             <span class="floating-label">Address</span>
           </div><br>
           <div class="wrapper">
-            <a ng-click="signUp()" class="btn btn-outline-primary rounded-pill w-auto">Submit</a>
+            <button type="submit" ng-click="signUp()" class="btn btn-outline-primary rounded-pill w-auto">Submit</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-  {{currentMember}}
 </section>
