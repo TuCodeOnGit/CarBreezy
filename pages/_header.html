@@ -4,51 +4,50 @@
     <a href="#!home" class="logo gradient">
       CarBreezy
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item me-lg-3">
-          <a ng-class="getClass('/home')" class="nav-link" aria-current="page" href="#!home">Home</a>
+          <a ng-class="getClass('/home')" class="nav-link" href="#!home">Home</a>
         </li>
         <li class="nav-item me-lg-3">
-          <a ng-class="getClass('/new-cars')" class="nav-link" aria-current="page" href="#!new-cars">New</a>
+          <a ng-class="getClass('/new-cars')" class="nav-link" href="#!new-cars">New</a>
         </li>
         <li class="nav-item me-lg-3">
-          <a ng-class="getClass('/used-cars')" class="nav-link" aria-current="page" href="#!used-cars">Used</a>
+          <a ng-class="getClass('/used-cars')" class="nav-link" href="#!used-cars">Used</a>
         </li>
         <li class="nav-item me-lg-3">
-          <a ng-class="getClass('/brands')" class="nav-link" aria-current="page" href="#!brands">Brands</a>
+          <a ng-class="getClass('/brands')" class="nav-link" href="#!brands">Brands</a>
         </li>
         <li class="nav-item me-lg-3">
           <a ng-class="getClass('/offers')" class="nav-link" href="#!offers">Offers</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="dropdown">
           <a ng-class="getClass('/more')" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             More
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!more/contact">Contact Us</a></li>
-            <li><a class="dropdown-item" href="#!more/about">About Us</a></li>
-            <li><a class="dropdown-item" href="#!more/gallery">Gallery</a></li>
-            <li><a class="dropdown-item" href="#!more/queries">Queries</a></li>
-            <li><a class="dropdown-item" href="#!more/sitemap">Sitemap</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="#!more/contact">Contact Us</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="#!more/about">About Us</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="#!more/gallery">Gallery</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="#!more/queries">Queries</a></li>
+            <li class="nav-item"><a class="dropdown-item" href="#!more/sitemap">Sitemap</a></li>
           </ul>
         </li>
-        <li class="nav-item" ng-show="!isSignIn">
-          <a ng-class="getClass('/sign-up')" class="nav-link pe-lg-0" href="#!sign-up">Sign Up <i
-              class="far fa-user text-primary ms-2"></i></a>
-        </li>
-        <li class="nav-item dropdown" ng-show="isSignIn">
+        <li class="dropdown nav-item-end" ng-show="isSignIn">
           <a class="nav-link dropdown-toggle pe-lg-0" data-bs-toggle="dropdown">
             <i class="fa fa-car-alt me-2"></i>{{ currentMember.username }}
           </a>
           <ul class="dropdown-menu border-danger">
-            <li><a class="dropdown-item text-danger" ng-click="logOut()">Log out</a></li>
+            <li class="nav-item"><a class="dropdown-item text-danger" ng-click="logOut()">Log out</a></li>
           </ul>
+        </li>
+        <li class="nav-item nav-item-end" ng-show="!isSignIn">
+          <a ng-class="getClass('/sign-up')" class="nav-link pe-lg-0" href="#!sign-up">Sign Up <i
+              class="far fa-user text-primary ms-2"></i></a>
         </li>
       </ul>
     </div>
@@ -57,10 +56,10 @@
 
 <script>
   $(window).ready(function() {
-    var counterContainer = document.querySelector("#website-counter");
-    var visitCount = localStorage.getItem("page_view");
 
     // Check if page_view entry is present
+    var counterContainer = document.querySelector("#website-counter");
+    var visitCount = localStorage.getItem("page_view");
     if (visitCount) {
       visitCount = Number(visitCount) + 1;
       localStorage.setItem("page_view", visitCount);
@@ -69,6 +68,22 @@
       localStorage.setItem("page_view", 1);
     }
     counterContainer.innerHTML = visitCount;
+
+
+    // Close tab on click
+    var x = window.matchMedia("(max-width: 991px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+    function myFunction(x) {
+      if (x.matches) { // If media query matches
+        const navLinks = document.querySelectorAll('.nav-item')
+        const menuToggle = document.getElementById('navbarSupportedContent')
+
+        navLinks.forEach((l) => {
+          l.addEventListener('click', () => { new bootstrap.Collapse(menuToggle).toggle() })
+        })
+      }
+    }
 
   })
 </script>

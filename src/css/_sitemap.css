@@ -17,6 +17,7 @@
   list-style-type: none;
   position: relative;
   padding: 10px;
+  padding-left: 0px;
   transition: .5s;
 }
 

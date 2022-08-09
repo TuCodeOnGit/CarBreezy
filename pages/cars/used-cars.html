@@ -31,8 +31,8 @@
             <div class="box">
               <div class="d-flex justify-content-center">
                 <div class="btn-group mx-auto mb-3">
-                  <a href="#!new-cars" ng-class="getClass('/new-cars')" class="btn btn-outline-primary">New Cars</a>
-                  <a href="#!used-cars" ng-class="getClass('/used-cars')" class="btn btn-outline-primary">Used Cars</a>
+                  <a data-bs-dismiss="offcanvas" href="#!new-cars" ng-class="getClass('/new-cars')" class="btn btn-outline-primary">New Cars</a>
+                  <a data-bs-dismiss="offcanvas" href="#!used-cars" ng-class="getClass('/used-cars')" class="btn btn-outline-primary">Used Cars</a>
                 </div>
               </div>
 
@@ -267,7 +267,7 @@
       </div>
       <div class="col-12 col-lg-9">
         <div class="row d-flex">
-          <div class="col-6 col-md-4 mb-4"
+          <div class="col-12 col-sm-6 col-md-4 mb-4"
             ng-repeat="car in cars | filter: {new: false, brand: brandFilter, bodyStyle: bodyStyleFilter} | filter: textSearch">
             <div class="card h-100 pt-4" data-bs-toggle="modal" data-bs-target="#carDetailsModal"
               ng-click="openCarDetails(car)">
@@ -290,7 +290,7 @@
                 <p class="card-text "><i class="fas me-2 fa-location-arrow"></i><small>Vietnam</small></p>
                 <p class="card-text "><i class="fas me-2 fa-fill-drip"></i><small style="text-transform: capitalize;"
                     ng-bind="car.external.exteriorColor">White</small></p>
-                <p class="card-text"><i class="fas me-2 fa-car"></i><small>{{ car.bodyStyle }}</small></p>
+                <p class="card-text" style="text-transform: capitalize;"><i class="fas me-2 fa-car"></i><small>{{ car.bodyStyle }}</small></p>
               </div>
             </div>
           </div>

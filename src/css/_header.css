@@ -40,7 +40,7 @@ header a:hover {
 
 /* Nav bar */
 @media (min-width: 992px) {
-  header .nav-item:last-child {
+  .nav-item-end {
       border-left: 1px solid #eee;
       margin-left: 15px;
       padding-left: 15px;
