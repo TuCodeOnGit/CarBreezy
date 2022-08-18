@@ -10,7 +10,7 @@
         <form ng-submit="signUp()" class="d-flex flex-column align-items-center">
           <div class="wrapper">
             <input ng-model="textmail" type="text" class="form-control inputText" required/>
-            <span class="floating-label">Your email address</span>
+            <span class="floating-label">Email</span>
           </div><br>
           <div class="wrapper">
             <input ng-model="textpass" type="password" class="form-control inputText" required />
@@ -21,8 +21,12 @@
             <span class="floating-label">Confirm password</span>
           </div><br>
           <div class="wrapper">
-            <input ng-model="textname" type="text" class="form-control inputText" required />
-            <span class="floating-label">First and last name</span>
+            <input ng-model="firstName" type="text" class="form-control inputText" required />
+            <span class="floating-label">First Name</span>
+          </div><br>
+          <div class="wrapper">
+            <input ng-model="lastName" type="text" class="form-control inputText" required />
+            <span class="floating-label">Last Name</span>
           </div><br>
           <div class="wrapper">
             <input ng-model="textaddress" type="text" class="form-control inputText" required />

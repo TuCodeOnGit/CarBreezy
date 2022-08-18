@@ -22,18 +22,18 @@
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="pills-new-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-new-cars"
-          type="button" role="tab" aria-controls="pills-new-cars" aria-selected="true">New Cars</button>
+          type="button">New Cars</button>
       </li>
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="pills-used-cars-tab" data-bs-toggle="pill" data-bs-target="#pills-used-cars"
-          type="button" role="tab" aria-controls="pills-used-cars" aria-selected="false">Used Cars</button>
+          type="button">Used Cars</button>
       </li>
     </ul>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-new-cars" role="tabpanel" aria-labelledby="pills-new-cars-tab">
-        <ul class="list-group list-group-horizontal-sm d-flex flex-wrap">
-          <li ng-repeat="brand in brands" class="list-group-item flex-fill w-sm-25 border-0">
-            <a class="d-flex align-items-center text-decoration-none text-dark" href="#!brands/new/{{ brand.name }}">
+        <ul class="list-group list-group-horizontal-sm d-flex flex-wrap align-items-center justify-content-center gap-2">
+          <li ng-repeat="brand in brands" class="list-group-item border-0 shadow rounded p-0" style="width: 300px;">
+            <a class="d-flex align-items-center text-decoration-none text-dark px-5 py-3" href="#!brands/new/{{ brand.name }}">
               <img src="src/images/brands/{{ brand.img }}" alt="carbrand" width="30px">
               <div class="brand-name ms-3">{{ brand.name }}</div>
             </a>
@@ -42,9 +42,9 @@
       </div>
 
       <div class="tab-pane fade" id="pills-used-cars" role="tabpanel" aria-labelledby="pills-used-cars-tab">
-        <ul class="list-group list-group-horizontal-sm d-flex flex-wrap">
-          <li ng-repeat="brand in brands" class="list-group-item flex-fill w-sm-25 border-0">
-            <a class="d-flex align-items-center text-decoration-none text-dark" href="#!brands/used/{{ brand.name }}">
+        <ul class="list-group list-group-horizontal-sm d-flex flex-wrap align-items-center justify-content-center gap-2">
+          <li ng-repeat="brand in brands" class="list-group-item border-0 shadow rounded p-0" style="width: 300px;">
+            <a class="d-flex align-items-center text-decoration-none text-dark px-5 py-3" href="#!brands/used/{{ brand.name }}">
               <img src="src/images/brands/{{ brand.img }}" alt="carbrand" width="30px">
               <div class="brand-name ms-3">{{ brand.name }}</div>
             </a>

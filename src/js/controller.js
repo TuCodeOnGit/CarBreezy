@@ -1,7 +1,7 @@
 
 app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $location, $window, $rootScope) {
 
-  (function () {
+  (function () { // data
     $http.get('members.json').then(function(res) {
       if (sessionStorage.getItem("members") == null) {
           sessionStorage.setItem("members", JSON.stringify(res.data));
@@ -24,13 +24,16 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
     });
   })();
 
+  // route params
   $scope.state = $routeParams.state;
   $scope.brandFilter = $routeParams.brand;
   
+  // active class
   $scope.getClass = function (path) {
     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
   }
   
+  // Select the brand if it has on routeParam
   $scope.initBrand = function () {
     document.getElementById("brandSelect").value = $routeParams.brand;
   }
@@ -39,10 +42,12 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
     $rootScope.selectedCar = car;
   }
 
+  // update myVar for current time
   $interval(function () {
     $scope.myVar = new Date().toLocaleString();
   }, 1000);
 
+  
   $scope.signIn = function () {
     for (let i = 0; i < $scope.members.length; i++) {
       
@@ -56,13 +61,11 @@ app.controller('myCtrl', function ($scope, $interval, $http, $routeParams, $loca
       }
     }
   }
-
   $scope.logOut = function () {
     $rootScope.isSignIn = false;
     $rootScope.currentMember = null;
     sessionStorage.removeItem("currentMember");
   }
-
   $scope.signUp = function () {
     var msg = "Sign up successfully!";
     var member = {
